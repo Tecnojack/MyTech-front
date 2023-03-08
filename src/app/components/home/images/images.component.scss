@@ -1,0 +1,24 @@
+.galeryContainer {
+  columns: 4 320px;
+  column-gap: 0.1em;
+}
+
+img {
+  display: block;
+}
+
+.tm-gallery div.d-block {
+  animation: show .5s ease;
+}
+
+figure {
+  margin-bottom: 0.1em;
+  display: block;
+}
+
+.img-Details {
+  max-height: 800px;
+  object-fit: cover;
+  max-width: fit-content;
+  
+}
