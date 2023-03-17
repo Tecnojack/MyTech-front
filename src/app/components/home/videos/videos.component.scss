@@ -36,9 +36,9 @@ figure {
   min-width: 145px;
   width: auto;
   border-color: rgb(0, 200, 255);
-  border-width: 2px;
-  border-style: double;
-  padding: 20px;
+  border-width: 4px;
+  border-style: solid;
+  min-width: 29%;
   box-shadow:
        inset 0 -3em 3em rgba(0,0,0,0.1),
              0 0  0 2px rgb(255,255,255),
@@ -46,10 +46,10 @@ figure {
 }
 
 .tm-paging-link-y {
-  border-color: rgb(251, 4, 119);
-  border-width: 2px;
-  border-style: double;
-  min-width: 145px;
+  border-color: rgb(251, 4, 70);
+  border-width: 4px;
+  border-style: solid;
+  min-width: 31%;
   padding: 20px;
   box-shadow:
        inset 0 -3em 3em rgba(0,0,0,0.1),
@@ -59,9 +59,9 @@ figure {
 
 .tm-paging-link-c {
   border-color: rgb(251, 210, 4);
-  border-width: 2px;
-  border-style: double;
-  min-width: 148px;
+  border-width: 4px;
+  border-style: solid;
+  min-width: 29%;
   width: auto;
   padding: 20px;
   box-shadow:
@@ -69,11 +69,18 @@ figure {
              0 0  0 2px rgb(255,255,255),
              0.3em 0.3em 1em rgba(0,0,0,0.3);
 }
-.tm-text-primary{
+
+.tm-text-primary {
   font-size: 15px;
 }
+
 i {
   font-size: 15px;
   margin: 0 10px;
   transition: 0.5s;
+}
+
+.tm-video-iframe {
+  max-height: 1080px;
+  min-height: 630px;
 }

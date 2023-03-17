@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ControllerService } from 'src/app/services/controller.service';
+import { ControllerService } from 'src/app/shared/services/controller.service';
 
 @Component({
   selector: 'app-home',

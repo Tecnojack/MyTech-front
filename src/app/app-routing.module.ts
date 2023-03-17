@@ -1,3 +1,6 @@
+import { ContactComponent } from './components/about/contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { ErrorsComponent } from './components/errors/errors.component';
 import { DetailsComponent } from './components/details/details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -5,10 +8,18 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'details', component: DetailsComponent },
+  { path: 'services', component: DetailsComponent },
   { path: 'home', component: HomeComponent },
   { path: '', component: HomeComponent },
-  { path: 'admin', loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule) },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./components/admin/admin.module').then((m) => m.AdminModule),
+  },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+
+  { path: '**', component: ErrorsComponent },
 ];
 
 @NgModule({

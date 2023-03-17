@@ -14,4 +14,5 @@ export class ControllerService {
   getInfoStatus() {
     return this.infoStatus;
   }
+  
 }

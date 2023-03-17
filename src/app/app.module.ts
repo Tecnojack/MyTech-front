@@ -9,8 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ErrorsComponent } from './components/errors/errors.component';
 import { AboutComponent } from './components/about/about.component';
-import { GaleryComponent } from './components/galery/galery.component';
-import { UserComponent } from './services/user/user.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { DetailsComponent } from './components/details/details.component';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -19,6 +18,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import { VideosComponent } from './components/home/videos/videos.component';
 import { ImagesComponent } from './components/home/images/images.component';
 import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+import { ContactComponent } from './components/about/contact/contact.component';
 
 // const dbConfig: DBConfig  = {
 //   name: 'MyTech',
@@ -40,12 +40,12 @@ import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
     HeaderComponent,
     ErrorsComponent,
     AboutComponent,
-    GaleryComponent,
-    UserComponent,
+    FooterComponent,
     DetailsComponent,
     VideosComponent,
     ImagesComponent,
-    SafePipe
+    SafePipe,
+    ContactComponent
   ],
   imports: [
     AdminModule,

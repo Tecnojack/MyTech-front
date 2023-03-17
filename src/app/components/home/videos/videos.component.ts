@@ -15,13 +15,10 @@ import { NgxIndexedDBService } from 'ngx-indexed-db';
 })
 export class VideosComponent implements OnInit {
   constructor(private dbService: NgxIndexedDBService) {
-    this.images = [];
     this.video = [];
   }
-  images: string[];
   video: any[];
-  title = '';
-  desc = '';
+
   link = 'https://www.youtube.com/embed/q9x722cps0Q';
   id = 0;
   ngOnInit(): void {

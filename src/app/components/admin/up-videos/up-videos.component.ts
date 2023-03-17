@@ -1,4 +1,4 @@
-import { ControllerService } from './../../../services/controller.service';
+import { ControllerService } from '../../../shared/services/controller.service';
 import { Component, OnInit } from '@angular/core';
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { FormControl, FormGroup } from '@angular/forms';

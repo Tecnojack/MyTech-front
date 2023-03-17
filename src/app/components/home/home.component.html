@@ -10,7 +10,7 @@
     <br />
 
     <div>
-      <h2 style="margin-bottom: -1px; color: rgb(0, 255, 123)">
+      <h2 style="margin-bottom: -1px; color: #ffffff; font-weight: bold;">
         Te espero en mis redes sociales
       </h2>
       <a
@@ -38,14 +38,32 @@
 </section>
 <div class="row tm-mb-90">
   <div class="col-12 d-flex align-items-center tm-paging-col">
-    <br>
-    <div class="tm-paging d-flex">
-      <a (click)="onImage()" class="tm-paging-link">IMAGENES</a>
-      <a (click)="onVideo()" class="tm-paging-link">VIDEOS</a>
+    <br />
+    <div class="tm-paging d-flex col-lg-12">
+      <a (click)="onImage()" class="tm-paging-link"
+        ><h4
+          style="
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+          "
+        >
+          <i class="bi bi-images bi-images-vid"></i>IMAGENES
+        </h4></a
+      >
+      <a (click)="onVideo()" class="tm-paging-link"
+        ><h4
+          style="
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+          "
+        >
+          <i class="bi bi-camera-reels-fill bi-images-vid"></i>VIDEOS
+        </h4></a
+      >
     </div>
   </div>
 </div>
 <div class="components">
-  <app-images *ngIf="showImage" ></app-images>
-  <app-videos *ngIf="showVideo" ></app-videos>
+  <app-images *ngIf="showImage"></app-images>
+  <app-videos *ngIf="showVideo"></app-videos>
 </div>

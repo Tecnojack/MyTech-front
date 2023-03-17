@@ -31,12 +31,6 @@ export class ImagesComponent implements OnInit {
       this.images = [];
       for (let item of res.items) {
         const url = await getDownloadURL(item);
-        // const id = res.items.indexOf(item);
-
-        // const img = res.items[id];
-        // const imgFinal = await getDownloadURL(img);
-        // this.detailsImg = imgFinal;
-        // console.log('ID: ', id, 'ImagenFianl', imgFinal);
         this.images.push(url);
         console.log('Images: ', this.images);
       }
@@ -46,5 +40,8 @@ export class ImagesComponent implements OnInit {
   details(img: string) {
     this.showGalery = !this.showGalery;
     this.detailsImg = img;
+  }
+  back() {
+    this.showGalery = !this.showGalery;
   }
 }
