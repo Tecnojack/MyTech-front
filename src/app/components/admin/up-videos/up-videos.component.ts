@@ -22,7 +22,6 @@ export class UpVideosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.controllerSVC.setInfoStatus(false);
   }
   uploadVideo() {
     this.dbService

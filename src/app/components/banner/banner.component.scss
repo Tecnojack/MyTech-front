@@ -4,7 +4,7 @@ h1 {
 
 #home {
   width: 100%;
-  height: 80vh;
+  height: 60vh;
   background: url("https://firebasestorage.googleapis.com/v0/b/mytech-d9ea3.appspot.com/o/src%2FTECNOJACK%20-%20copia.jpg?alt=media&token=a0dc4650-7e07-4293-8ebf-06ee0f14c547") center center;
   background-size: cover;
   position: relative;
@@ -77,7 +77,7 @@ h1 {
 }
 
 #home .btn-get-startedT:hover {
-  background: #ff0303;
+  background: #14001d;
   border: 2px solid #ffffff;
 }
 
@@ -112,59 +112,15 @@ i {
   transition: 0.2s;
 }
 
-.tm-paging-col {
-  flex-direction: column;
+.galeryContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  margin: 10px;
 }
 
-.components {
-  margin-top: -50px;
-}
-
-.tm-paging-link {
-  width: 100%;
-  border-color: #009999;
-  border-width: 4px;
-  border-style: solid;
-  padding: 20px;
-  box-shadow:
-    inset 0 -3em 3em rgba(255, 255, 255, 0),
-    0 0 0 2px rgba(255, 255, 255, 0),
-    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-}
-
-.bi-images-vid {
-  font-size: 23px;
-}
-
-.imgAdmin {
+img {
+  max-height: 300px;
   object-fit: cover;
   object-position: center;
-  width: 30%;
-  height: 30%;
-  border-radius: 50%;
-  border-width: 2px;
-  border-color: #ffffff;
-  border-style: solid;
 }
-h5{
-  color: #000000;
-  font-size: 15px;
-  font-weight: 500;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 0.5px;
-  text-transform: capitalize;
 
-}
-.btn-primary{
-  background-color: #009999;
-  border: #ffffff 1px solid;
-  box-shadow:
-  inset 0 -3em 3em rgba(255, 255, 255, 0),
-  0 0 0 2px rgba(255, 255, 255, 0),
-  0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
-}
-.btn-primary:hover{
-  color: #009999;
-  background-color: #ffffff;
-  border-color: #009999;
-}

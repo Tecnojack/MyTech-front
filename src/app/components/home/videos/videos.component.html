@@ -1,95 +1,92 @@
-<div class="container-fluid tm-container-content tm-mt-60">
-  <div class="row mb-4">
-    <h2 class="col-12 tm-text-primary">
-      BODA CINEMATOGRÁFIA | Grabación de boda con DRON + CANON M200 + CANON 50MM
-    </h2>
-  </div>
-  <div class="row tm-mb-90">
-    <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12">
-      <iframe
-        class="col-xl-12 col-lg-12 col-md-12 col-sm-12 tm-video-iframe"
-        [src]="link | safe : 'resourceUrl'"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div>
-    <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12">
-      <div class="tm-bg-gray tm-video-details">
-        <p
-          class="mb-4"
-          style="
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-              sans-serif;
-            font-size: larger;
-          "
-        >
-          Esta es nuestra más reciente producción audiovisual, la boda de un
-          gran amigo, Jesus David Mejía (Chucho), en La Pita, Sucre. En esta
-          ocasión conté con el apoyo fotográfico de Jose Baldovino y las tomas
-          aéreas con Dron de Kevin Pérez. Puedes apoyar nuestro trabajo
-
-          <a href="https://paypal.me/tecnojack" target="_parent" rel="sponsored"
-            >con una pequeña donación</a
-          >
-          via
-          <a href="https://paypal.me/tecnojack" target="_parent" rel="sponsored"
-            >paypal</a
-          >
-        </p>
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-          <h2 class="tm-text-primary mb-5">¿Quieres decir algo? </h2>
-          <form id="contact-form" action="" method="POST" class="">
-              <div class="form-group">
-                  <textarea rows="5" name="message" class="form-control rounded-0" placeholder="Escribe tu comentario" required=></textarea>
-              </div>
-
-              <div class="form-group tm-text-right">
-                  <button type="submit" class="btn btn-primary">Comentar</button>
-              </div>
-          </form>
-      </div>
-        <div class="tm-paging d-flex">
-          <a
-            class="tm-paging-link tm-paging-link-y"
-            href="https://www.youtube.com/@tecnojack"
-            ><i class="bi bi-youtube"></i>YOUTUBE</a
-          >
-          <a
-            class="tm-paging-link tm-paging-link-d"
-            href="https://paypal.me/tecnojack"
-            ><i class="bi bi-paypal"></i>DONAR</a
-          >
-          <a
-            class="tm-paging-link tm-paging-link-c"
-            href="https://wa.me/+573145406467"
-            ><i class="bi bi-whatsapp"></i>CONTACTAR</a
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-4">
-    <h2 class="col-12 tm-text-primary">MÁS VIDEOS</h2>
-  </div>
-  <div class="tm-gallery galeryContainer">
-    <div class="row mb-12 tm-gallery" *ngFor="let vid of video">
+<div
+  class="container-fluid tm-container-content tm-mt-60"
+  *ngIf="hostVideosVM$ | async as videos"
+>
+  <div *ngFor="let host of videos">
+    <div class="row mb-4">
       <h2 class="col-12 tm-text-primary">
-        {{ vid.title }}
+        {{ host.title }}
       </h2>
-      <div class="col-xl-4">
+    </div>
+    <div class="row tm-mb-90">
+      <div class="col-xl-8 col-lg-7 col-md-12 col-sm-12">
         <iframe
-          width="560"
-          height="315"
-          [src]="vid.link | safe : 'resourceUrl'"
+          class="col-xl-12 col-lg-12 col-md-12 col-sm-12 tm-video-iframe"
+          [src]="host.link | safe : 'resourceUrl'"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         ></iframe>
+      </div>
+      <div class="col-xl-4 col-lg-5 col-md-12 col-sm-12">
+        <div class="tm-bg-gray tm-video-details">
+          <p
+            class="mb-4"
+            style="
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+              font-size: larger;
+            "
+          >
+            {{ host.description }}
 
+            <a
+              href="https://paypal.me/tecnojack"
+              target="_parent"
+              rel="sponsored"
+              >con una pequeña donación</a
+            >
+            via
+            <a
+              href="https://paypal.me/tecnojack"
+              target="_parent"
+              rel="sponsored"
+              >paypal</a
+            >
+          </p>
+          <div class="tm-paging d-flex">
+            <a
+              class="tm-paging-link tm-paging-link-y"
+              href="https://www.youtube.com/@tecnojack"
+              ><i class="bi bi-youtube"></i>YOUTUBE</a
+            >
+            <a
+              class="tm-paging-link tm-paging-link-d"
+              href="https://paypal.me/tecnojack"
+              ><i class="bi bi-paypal"></i>DONAR</a
+            >
+            <a
+              class="tm-paging-link tm-paging-link-c"
+              href="https://wa.me/+573145406467"
+              ><i class="bi bi-whatsapp"></i>CONTACTAR</a
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
+<div class="row mb-4" style="margin-left: 0%">
+  <h1 class="col-12 tm-text-primary" style="font-size: 40px">MÁS VIDEOS</h1>
+</div>
+<div class="tm-gallery galeryContainer" *ngIf="VideosVM$ | async as videos">
+  <div class="row mb-12 tm-gallery" *ngFor="let vid of videos">
+    <h3 class="col-12 tm-text-primary">
+      {{ vid.title }}
+    </h3>
+    <div class="col-xl-4">
+      <iframe
+        width="560"
+        height="315"
+        [src]="vid.link | safe : 'resourceUrl'"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+      <hr />
+    </div>
+  </div>
+</div>

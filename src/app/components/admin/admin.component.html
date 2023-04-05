@@ -1,3 +1,111 @@
-<!-- <app-up-images></app-up-images> -->
-
-<app-up-videos></app-up-videos>
+<section id="home" class="d-flex align-items-center">
+  <div
+    class="container text-center position-relative"
+    data-aos="fade-in"
+    data-aos-delay="200"
+  >
+    <div>
+      <br />
+      <br />
+      <img
+        class="imgAdmin"
+        src="https://firebasestorage.googleapis.com/v0/b/mytech-d9ea3.appspot.com/o/src%2Fadmin-pic.JPG?alt=media&token=3fc10914-0a03-49f9-a180-598139f24d33"
+        alt=""
+      />
+    </div>
+    <h1>BIENVENIDO DE NUEVO, TENCNOJACK</h1>
+    <h2>AQUÍ ESTÁN TUS OPCIONES DE AMINISTRACIÓN</h2>
+    <a class="btn-get-started btn-get-startedT scrollto" (click)="onLogout()"
+      ><i class="bi bi-box-arrow-left"></i>Cerrar sesión</a
+    >
+    <br />
+    <br />
+  </div>
+</section>
+<div class="row tm-mb-90">
+  <div class="col-12 d-flex align-items-center tm-paging-col">
+    <br />
+    <div class="tm-paging d-flex col-lg-12">
+      <a class="tm-paging-link" (click)="onComments()"
+        ><h4
+          style="
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+          "
+        >
+          <i class="bi bi-images bi-images-vid"></i>COMENTARIOS
+        </h4></a
+      >
+      <a class="tm-paging-link"  (click)="onRequest()"
+        ><h4
+          style="
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+              sans-serif;
+          "
+        >
+          <i class="bi bi-camera-reels-fill bi-images-vid"></i>SOLICITUDES
+        </h4></a
+      >
+    </div>
+  </div>
+</div>
+<section class="container" *ngIf="showRequest">
+  <h3>SOLICITUDES</h3>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let item of dataContactMSJ">
+      <div class="card">
+        <h5 class="card-header">
+          <i class="bi bi-person-fill"></i>{{ item.name }}
+        </h5>
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="bi bi-envelope"></i>{{ item.email }}
+          </h5>
+          <h5 class="card-title">
+            <i class="bi bi-telephone"></i>{{ item.reason }}
+          </h5>
+          <p class="card-text">
+            {{ item.message }}
+          </p>
+          <a
+            (click)="sendWhatsApp(item.name, item.reason, item.message)"
+            class="btn btn-primary col-12"
+            ><i class="bi bi-whatsapp">Responder en Whatsapp</i></a
+          >
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+  <br />
+</section>
+<section class="container" *ngIf="showComments">
+  <h3>COMENTARIOS</h3>
+  <div class="row">
+    <div class="col-sm-4" *ngFor="let item of dataContactMSJ">
+      <div class="card">
+        <h5 class="card-header">
+          <i class="bi bi-person-fill"></i>{{ item.name }}
+        </h5>
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="bi bi-envelope"></i>{{ item.email }}
+          </h5>
+          <h5 class="card-title">
+            <i class="bi bi-telephone"></i>{{ item.reason }}
+          </h5>
+          <p class="card-text">
+            {{ item.message }}
+          </p>
+          <a
+            (click)="sendWhatsApp(item.name, item.reason, item.message)"
+            class="btn btn-primary col-12"
+            ><i class="bi bi-whatsapp">Responder en Whatsapp</i></a
+          >
+        </div>
+      </div>
+      <br />
+    </div>
+  </div>
+  <br />
+</section>

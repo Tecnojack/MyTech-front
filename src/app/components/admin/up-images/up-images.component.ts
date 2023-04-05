@@ -11,7 +11,6 @@ export class UpImagesComponent implements OnInit {
   constructor(private storage: Storage, private controllerSVC: ControllerService) {}
 
   ngOnInit(): void {
-    this.controllerSVC.setInfoStatus(false);
   }
   onLoad(e: any) {
     console.log(e.target.files[0]);

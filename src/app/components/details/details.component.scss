@@ -1,118 +1,41 @@
-h1 {
-  font-size: 150px;
-}
 
-#home {
-  width: 100%;
-  height: 60vh;
-  background: url("https://firebasestorage.googleapis.com/v0/b/mytech-d9ea3.appspot.com/o/src%2FTECNOJACK%20-%20copia.jpg?alt=media&token=a0dc4650-7e07-4293-8ebf-06ee0f14c547") center center;
-  background-size: cover;
-  position: relative;
-}
-
-#home .container {
-  padding-top: 80px;
-}
-
-#home:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#home h1 {
-  margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  color: #fff;
-}
-
-#home h2 {
-  color: #eee;
-  margin-bottom: 40px;
-  font-size: 15px;
-  font-weight: 500;
-  font-family: "Open Sans", sans-serif;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-#home .btn-get-started {
-  font-family: "Poppins", sans-serif;
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 28px;
-  border-radius: 50px;
-  transition: 0.5s;
-  margin: 10px;
-  border: 2px solid #fff;
-  color: #fff;
-}
-
-#home .btn-get-started:hover {
-  border: 2px solid #009970;
-}
-
-#home .btn-get-startedF:hover {
-  background: #0733b8;
-  border: 2px solid #ffffff;
-}
-
-#home .btn-get-startedY:hover {
-  background: #d80404;
-  border: 2px solid #fffcfc;
-}
-
-#home .btn-get-startedI:hover {
-  background: #fd05aa;
-  border: 2px solid #ffffff;
-}
-
-#home .btn-get-startedT:hover {
-  background: #380152;
-  border: 2px solid #ffffff;
-}
-
-@media (min-width: 1024px) {
-  #home {
-    background-attachment: fixed;
-  }
-}
-
-@media (max-width: 768px) {
-  #home {
-    height: 100vh;
-  }
-
-  #home .container {
-    padding-top: 60px;
-  }
-
-  #home h1 {
-    font-size: 32px;
-    line-height: 36px;
-  }
-}
-
-.scrollto {
-  text-decoration: none;
-}
 
 i {
-  font-size: 15px;
+  font-size: 25px;
   margin: 0 10px;
   transition: 0.2s;
 }
+
 .galeryContainer {
   display: grid;
   grid-template-columns: repeat(3, 33%);
   margin: 10px;
+}
+
+img {
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.btn-get-startedC {
+  text-align: center;
+  align-items: center;
+  font-size: 30px;
+  display: flex;
+  transition: 0.5s;
+  background: #000000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  justify-content: center;
+}
+.btn-get-startedC:hover{
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+}
+.iconsBox
+{
+  display: flex;
+  justify-content: center;
 }

@@ -29,7 +29,6 @@ export class AddDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.controllerSVC.setInfoStatus(false);
   }
   newDB() {
     const storeSchema: ObjectStoreMeta = {
@@ -68,5 +67,4 @@ export class AddDetailsComponent implements OnInit {
         console.log('key: ', key);
       });
   }
-
 }

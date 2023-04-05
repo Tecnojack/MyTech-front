@@ -1,16 +1,16 @@
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import {
-  setPersistence,
   onAuthStateChanged,
   Auth,
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
-  signInWithPopup,
-  GoogleAuthProvider,
-  getAuth,
+  setPersistence,
+  authState,
+  user,
+  User,
 } from '@angular/fire/auth';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,9 +18,12 @@ import {
 export class UserService {
   status: boolean = false;
   user: null | object = null;
-  userData: null | object = null;
+  user$: Observable<User | null>;
+  private loggedIn = new BehaviorSubject<boolean>(false);
   header: boolean = false;
   constructor(private auth: Auth, private router: Router) {
+    setPersistence(this.auth, { type: 'SESSION' });
+    this.user$ = authState(this.auth);
     onAuthStateChanged(this.auth, (user) => {
       if (user) {
         this.user = user;
@@ -30,31 +33,17 @@ export class UserService {
     });
   }
 
-  register({ email, password }: any) {
-    return createUserWithEmailAndPassword(this.auth, email, password);
+  get isLoggedIn() {
+    return this.loggedIn.asObservable();
   }
-
   login({ email, password }: any) {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  loginWithGoogle() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider());
-  }
-
   logout() {
+    this.router.navigate(['/login']);
+    this.loggedIn.next(false);
     return signOut(this.auth);
   }
-  setUserStatus(isLogged: boolean) {
-    this.status = isLogged;
-  }
-  getUserStatus() {
-    return this.status;
-  }
-  setUser(user: any) {
-    this.userData = user;
-  }
-  getUser() {
-    return this.userData;
-  }
+
 }

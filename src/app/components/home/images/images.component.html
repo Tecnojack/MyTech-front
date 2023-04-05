@@ -1,3 +1,17 @@
+<div class="col-12 d-flex align-items-center tm-paging-col container-fluid">
+  <h3 class="h3c">&nbsp;Categorías:&nbsp;</h3>
+  <br />
+  <div class="tm-paging d-flex col-lg-12">
+    <a
+      *ngFor="let item of categories"
+      (click)="getCategory(item)"
+      class="tm-paging-categories"
+      ><h4>
+        {{ item }}
+      </h4></a
+    >
+  </div>
+</div>
 <div class="container-fluid tm-container-content tm-mt-60" *ngIf="showGalery">
   <div class="row mb-4">
     <h2 class="col-6 tm-text-primary">ULTIMAS IMAGENES</h2>
@@ -5,12 +19,12 @@
   </div>
   <hr />
   <div class="tm-gallery galeryContainer">
-    <div *ngFor="let item of images" class="">
+    <div *ngFor="let item of imgNew" class="">
       <figure class="effect-ming tm-video-item">
-        <img [src]="item" alt="Image" class="img-fluid" />
+        <img [src]="item.url" alt="Image" class="img-fluid" />
         <figcaption
           class="d-flex align-items-center justify-content-center"
-          (click)="details(item)"
+          (click)="details(item.url)"
         >
           <h2><i class="bi bi-heart-fill"></i> Ver más</h2>
         </figcaption>
@@ -18,7 +32,7 @@
     </div>
   </div>
   <br />
-  <hr>
+  <hr />
 </div>
 
 <div class="container-fluid tm-container-content tm-mt-60" *ngIf="!showGalery">
@@ -34,36 +48,10 @@
         </figcaption>
       </figure>
     </div>
+
+
     <div class="col-xl-6 col-lg-5 col-md-6 col-sm-12">
       <div class="tm-bg-gray tm-video-details">
-        <p
-          class="mb-4"
-          style="
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
-              sans-serif;
-            font-size: larger;
-          "
-        >
-          Esta es nuestra más reciente producción audiovisual, la boda de un
-          gran amigo, Jesus David Mejía (Chucho), en La Pita, Sucre. En esta
-          ocasión conté con el apoyo fotográfico de Jose Baldovino y las tomas
-          aéreas con Dron de Kevin Pérez. Puedes apoyar nuestro trabajo
-
-          <a href="https://paypal.me/tecnojack" target="_parent" rel="sponsored"
-            >con una pequeña donación</a
-          >
-          via
-          <a href="https://paypal.me/tecnojack" target="_parent" rel="sponsored"
-            >paypal</a
-          >
-        </p>
-        <div class="mb-4">
-          <h3 class="tm-text-gray-dark mb-3">License</h3>
-          <p>
-            Free for both personal and commercial use. No need to pay anything.
-            No need to make any attribution.
-          </p>
-        </div>
         <div class="tm-paging d-flex">
           <a
             class="tm-paging-link tm-paging-link-y"
@@ -82,19 +70,51 @@
           >
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-          <h2 class="tm-text-primary mb-5">¿Quieres decir algo? </h2>
-          <form id="contact-form" action="" method="POST" class="">
-              <div class="form-group">
-                  <textarea rows="5" name="message" class="form-control rounded-0" placeholder="Escribe tu comentario" required=></textarea>
-              </div>
+          <h2 class="tm-text-primary mb-5">¿Quieres decir algo?</h2>
+          <form [formGroup]="formComment" (submit)="comment()" id="contact-form" action="" method="POST" class="">
+            <div class="form-group">
+              <input
+                type="text"
+                formControlName="name"
+                name="author"
+                class="form-control rounded-0"
+                placeholder="*¿Cuál es tu nombre?"
+              />
+            </div>
+            <div class="form-group">
+              <textarea
+                rows="5"
+                formControlName="message"
+                name="content"
+                class="form-control rounded-0"
+                placeholder="*Escribe tu comentario"
+              ></textarea>
+            </div>
 
-              <div class="form-group tm-text-right">
-                  <button type="submit" class="btn btn-primary">Comentar</button>
-              </div>
+            <div class="form-group tm-text-right">
+              <button type="submit" class="btn btn-primary">Comentar</button>
+            </div>
           </form>
+          <ul>
+            <li *ngFor="let comment of comments">
+              <div>
+                <strong
+                  ><i class="bi bi-person"></i>{{ comment.author }}</strong
+                >
+              </div>
+              <div>{{ comment.content }}</div>
+              <!-- <div class="reactions">
+                <button (click)="addReaction(comment, 'like')">
+                  <i class="bi bi-hand-thumbs-up-fill"></i> {{ comment.reactions["like"] || 0 }}
+                </button>
+                <button (click)="addReaction(comment, 'dislike')">
+                  <i class="bi bi-hand-thumbs-down-fill"></i> {{ comment.reactions["dislike"] || 0 }}
+                </button>
+              </div> -->
+            </li>
+          </ul>
+        </div>
       </div>
-      </div>
-
     </div>
   </div>
   <div class="row mb-4">

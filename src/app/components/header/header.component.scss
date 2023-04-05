@@ -150,7 +150,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #009970;
+  background: #009999;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -164,7 +164,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #00c28e;
+  background: #009999;;
   color: #fff;
 }
 
@@ -205,7 +205,7 @@ h6 {
 #header .logo {
   overflow: hidden;
   padding: 16px 30px 12px 30px;
-  background: #e9f3ef;
+  background: #009999;
 }
 
 #header .logo h1 {
@@ -232,12 +232,12 @@ h6 {
   #header {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     top: 0;
-    background: #e3f1e8;
+    background: #009999;
   }
 
   #header.header-scrolled,
   #header .header-container {
-    background: #e3f1e8;
+    background: #009999;
   }
 
   #header .logo {

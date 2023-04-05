@@ -1,50 +1,12 @@
-<section id="home" class="d-flex align-items-center">
-  <div
-    class="container text-center position-relative"
-    data-aos="fade-in"
-    data-aos-delay="200"
-  >
-    <h1>"EL ARTE DE SER UN PRO"</h1>
-    <h2>INNOVACIÓN - CREATIVIDAD - INGENIO - ARTE</h2>
-    <br />
-    <br />
+<app-banner [title]="'HOME'"></app-banner>
 
-    <div>
-      <h2 style="margin-bottom: -1px; color: #ffffff; font-weight: bold;">
-        Te espero en mis redes sociales
-      </h2>
-      <a
-        class="btn-get-started btn-get-startedF scrollto"
-        href="https://www.facebook.com/tecnojackyt/"
-        ><i class="bi bi-facebook"></i>Facebook</a
-      >
-      <a
-        class="btn-get-started btn-get-startedY scrollto"
-        href="https://www.youtube.com/@tecnojack"
-        ><i class="bi bi-youtube"></i>YouTube</a
-      >
-      <a
-        class="btn-get-started btn-get-startedI scrollto"
-        href="https://www.instagram.com/tecnojack/"
-        ><i class="bi bi-instagram"></i>Instagram</a
-      >
-      <a
-        class="btn-get-started btn-get-startedT scrollto"
-        href="https://www.tiktok.com/@tecnojackyt"
-        ><i class="bi bi-tiktok"></i>Tiktok</a
-      >
-    </div>
-  </div>
-</section>
 <div class="row tm-mb-90">
   <div class="col-12 d-flex align-items-center tm-paging-col">
-    <br />
-    <div class="tm-paging d-flex col-lg-12">
+    <div class="tm-paging d-flex col-lg-11">
       <a (click)="onImage()" class="tm-paging-link"
         ><h4
           style="
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
-              sans-serif;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
           "
         >
           <i class="bi bi-images bi-images-vid"></i>IMAGENES
@@ -53,8 +15,7 @@
       <a (click)="onVideo()" class="tm-paging-link"
         ><h4
           style="
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
-              sans-serif;
+             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
           "
         >
           <i class="bi bi-camera-reels-fill bi-images-vid"></i>VIDEOS
@@ -63,6 +24,7 @@
     </div>
   </div>
 </div>
+
 <div class="components">
   <app-images *ngIf="showImage"></app-images>
   <app-videos *ngIf="showVideo"></app-videos>

@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  Storage,
-  ref,
-  listAll,
-  getDownloadURL,
-  getMetadata,
-} from '@angular/fire/storage';
+import { Component, inject, OnInit } from '@angular/core';
+
 import { NgxIndexedDBService } from 'ngx-indexed-db';
+import { map, pluck } from 'rxjs/operators';
+import { ControllerService } from 'src/app/shared/services/controller.service';
 
 @Component({
   selector: 'app-videos',
@@ -24,7 +20,30 @@ export class VideosComponent implements OnInit {
   ngOnInit(): void {
     this.getVideo();
   }
+  private controllerService = inject(ControllerService);
 
+  hostVideosVM$ = this.controllerService.getVideoHost().pipe(
+    pluck('data'),
+    map((hostVideos) => {
+      return hostVideos.map(({ id, attributes }) => ({
+        id,
+        title: attributes.title,
+        description: attributes.desc,
+        link: attributes.url,
+      }));
+    })
+  );
+  VideosVM$ = this.controllerService.getVideos().pipe(
+    pluck('data'),
+    map((hostVideos) => {
+      return hostVideos.map(({ id, attributes }) => ({
+        id,
+        title: attributes.title,
+        description: attributes.desc,
+        link: attributes.url,
+      }));
+    })
+  );
   getVideo() {
     for (let index = 0; index < 20; index++) {
       this.id = index;

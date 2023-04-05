@@ -1,15 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { map, pluck } from 'rxjs/operators';
+import { ControllerService } from 'src/app/shared/services/controller.service';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
+  private controllerService = inject(ControllerService);
 
-  constructor() { }
+  teamVM$ = this.controllerService.getTeam().pipe(
+    pluck('data'),
+    map((services) => {
+      return services.map(({ id, attributes }) => ({
+        id,
+        title: attributes.name,
+        description: attributes.desc,
+        imageUrl: this.createImageUrl(attributes.image.data.attributes.url),
+        social_profiles: attributes.social_profiles.data.map(
+          (profile: any) => profile.attributes.red
+        ),
+      }));
+    })
+  );
 
-  ngOnInit(): void {
+  createImageUrl(imagePath: string) {
+    const baseUrl = 'https://strapi-76ms.onrender.com';
+    return baseUrl + imagePath;
   }
 
 }

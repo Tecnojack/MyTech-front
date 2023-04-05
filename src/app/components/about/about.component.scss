@@ -17,25 +17,7 @@ https://templatemo.com/tm-556-catalog-z
   z-index: 1001;
 }
 
-#loader {
-  display: block;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-top-color: #3498db;
 
-  -webkit-animation: spin 2s linear infinite;
-  /* Chrome, Opera 15+, Safari 5+ */
-  animation: spin 2s linear infinite;
-  /* Chrome, Firefox 16+, IE 10+, Opera */
-
-  z-index: 1002;
-}
 
 #loader:before {
   content: "";
@@ -341,13 +323,7 @@ p,
   cursor: pointer;
 }
 
-.tm-video-item img {
-  position: relative;
-  display: block;
-  min-height: 100%;
-  max-width: 100%;
-  opacity: 0.8;
-}
+
 
 .tm-video-item figcaption {
   padding: 2em;
@@ -538,11 +514,7 @@ figure.effect-ming:hover img {
   position: relative;
 }
 
-#tm-video {
-  display: block;
-  width: 100%;
-  height: auto;
-}
+
 
 #tm-video-control-button {
   position: absolute;
@@ -567,18 +539,19 @@ figure.effect-ming:hover img {
 }
 
 .tm-about-3-col {
+  margin-top: 10px;
   max-width: 540px;
 }
 
 .tm-about-2-col,
 .tm-about-3-col {
   margin-bottom: 50px;
+  justify-content: center !important;
 }
 
 .tm-about-icon-container {
-  width: 150px;
-  height: 150px;
-  border: 1px solid #009999;
+  border-radius: 50%;
+  border: 2px solid #009999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -765,3 +738,60 @@ select:not([multiple]) {
   }
 }
 
+.img-team {
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+}
+
+.cont {
+  margin-top: 10px;
+  border: #000000 1px solid;
+}
+
+ng-container {
+  display: flex;
+}
+
+
+.btn-get-startedC {
+  text-align: center;
+  align-items: center;
+  font-size: 30px;
+  display: flex;
+  transition: 0.5s;
+  background: #000000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  justify-content: center;
+  padding: 5px 10px;
+}
+
+.btn-get-startedC:hover {
+  background: #ffffff;
+  border: 2px solid #000000;
+  color: #000000;
+}
+.img-fluid{
+  border: 5px solid #009999;
+  border-radius: 2%;
+}
+.bg-image {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/mytech-d9ea3.appspot.com/o/src%2Ftnjk.png?alt=media&token=3523a1cb-af54-4407-b344-34d10a068374');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.bgc{
+
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 300px;
+}

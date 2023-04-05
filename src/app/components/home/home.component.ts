@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ControllerService } from 'src/app/shared/services/controller.service';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,8 +9,7 @@ import { ControllerService } from 'src/app/shared/services/controller.service';
 export class HomeComponent implements OnInit {
   showVideo = false;
   showImage = true;
-  constructor(private controllerSVC: ControllerService, private router: Router) {
-    this.controllerSVC.setInfoStatus(true);
+  constructor() {
     this.images = [];
   }
   images: string[];

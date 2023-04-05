@@ -1,5 +1,5 @@
 .galeryContainer {
-  columns: 4 320px;
+  columns: 6 320px;
   column-gap: 0.1em;
 }
 
@@ -25,49 +25,123 @@ figure {
 .tm-paging-link-d {
   min-width: 145px;
   width: auto;
-  border-color: rgb(0, 200, 255);
+  border-color: #009999;
   border-width: 4px;
   border-style: solid;
   min-width: 31%;
   box-shadow:
-       inset 0 -3em 3em rgba(0,0,0,0.1),
-             0 0  0 2px rgba(255, 255, 255, 0),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgba(255, 255, 255, 0),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .tm-paging-link-y {
-  border-color: rgb(251, 4, 70);
+  border-color: #009999;
   border-width: 4px;
   border-style: solid;
   min-width: 31%;
   padding: 20px;
   box-shadow:
-       inset 0 -3em 3em rgba(0,0,0,0.1),
-             0 0  0 2px rgba(255, 255, 255, 0),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgba(255, 255, 255, 0),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .tm-paging-link-c {
-  border-color: rgb(251, 210, 4);
+  border-color: #009999;
   border-width: 4px;
   border-style: solid;
   min-width: 31%;
   width: auto;
   padding: 20px;
   box-shadow:
-       inset 0 -3em 3em rgba(0,0,0,0.1),
-             0 0  0 2px rgba(255, 255, 255, 0),
-             0.3em 0.3em 1em rgba(0,0,0,0.3);
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgba(255, 255, 255, 0),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
-.tm-text-primary{
+
+.tm-text-primary {
   font-size: 25px;
 
 }
+
 i {
   font-size: 15px;
   margin: 0 10px;
   transition: 0.5s;
 }
-.bi-heart-fill{
+
+.bi-heart-fill {
   font-size: 25px;
+}
+
+.h3c {
+  margin-top: 9px;
+  height: 50px;
+  background-color: #009999;
+  color: #ffffff;
+}
+
+
+.comment-list {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.comment-list form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment-list form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.comment-list form div label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.comment-list form div input,
+.comment-list form div textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.comment-list form div textarea {
+  height: 100px;
+}
+
+.comment-list form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.comment-list .reactions {
+  display: flex;
+  margin-top: 10px;
+}
+
+.comment-list .reactions button {
+  margin-right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-list .reactions button:focus {
+  outline: none;
+}
+
+.comment-list .reactions button:hover {
+  transform: scale(1.2);
 }

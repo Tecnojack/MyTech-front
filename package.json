@@ -23,6 +23,7 @@
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "bootstrap-sass": "^3.4.3",
+    "dexie": "^3.2.3",
     "firebase": "^9.17.2",
     "jquery": "^3.6.3",
     "ngx-indexed-db": "^16.0.0",

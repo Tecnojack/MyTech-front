@@ -602,7 +602,7 @@ select:not([multiple]) {
   -moz-appearance: none;
   background-position: right 15px center;
   background-repeat: no-repeat;
-  background-image: url(./assets/img/select-arrow.png);
+  background-image: url(../../../../assets/img/select-arrow.png);
   padding: 14px 20px;
   padding-right: 20px;
   color: #666;
@@ -764,5 +764,52 @@ select:not([multiple]) {
   .tm-social-links li {
     margin-right: 3px;
   }
+}
+
+.tm-text-right {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-get-startedC {
+  text-align: center;
+  align-items: center;
+  font-size: 20px;
+  display: flex;
+  transition: 0.5s;
+  background: #ffffff;
+  border: 2px solid #009999;
+  color: #00995c;
+  justify-content: center;
+  border-radius: 3%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.btn-get-startedC:hover {
+  background: #009999;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.iconsBox {
+  display: flex;
+  justify-content: center;
+}
+
+.bg-image {
+  background-image: url('https://firebasestorage.googleapis.com/v0/b/mytech-d9ea3.appspot.com/o/src%2Ftnjk.png?alt=media&token=3523a1cb-af54-4407-b344-34d10a068374');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+.bgc{
+
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 300px;
 }
 

@@ -1,5 +1,5 @@
+import { Component, OnInit, inject } from '@angular/core';
 import { ControllerService } from './shared/services/controller.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  infoStatus = false;
-  constructor() {}
-  ngOnInit(): void {
+  title = '';
+constructor(private controllerService: ControllerService) {
 
+}
+  ngOnInit(): void {
+    this.controllerService.setTitle('HOME');
+    this.title = this.controllerService.getTitle();
   }
 
-  title = 'MyTech';
 }

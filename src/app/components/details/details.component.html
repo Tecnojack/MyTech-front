@@ -1,67 +1,66 @@
-<section id="home" class="d-flex align-items-center">
-  <div
-    class="container text-center position-relative"
-    data-aos="fade-in"
-    data-aos-delay="200"
-  >
-    <h1>"EL ARTE DE SER UN PRO"</h1>
-    <h2>INNOVACIÓN - CREATIVIDAD - INGENIO - ARTE</h2>
-    <br />
-    <br />
+<app-banner [title]="'SERVICIOS'"></app-banner>
 
-    <div>
-      <h2 style="margin-bottom: -1px; color: rgb(0, 255, 123)">
-        Te espero en mis redes sociales
-      </h2>
-      <a
-        class="btn-get-started btn-get-startedF scrollto"
-        href="https://www.facebook.com/tecnojackyt/"
-        ><i class="bi bi-facebook"></i>Facebook</a
-      >
-      <a
-        class="btn-get-started btn-get-startedY scrollto"
-        href="https://www.youtube.com/@tecnojack"
-        ><i class="bi bi-youtube"></i>YouTube</a
-      >
-      <a
-        class="btn-get-started btn-get-startedI scrollto"
-        href="https://www.instagram.com/tecnojack/"
-        ><i class="bi bi-instagram"></i>Instagram</a
-      >
-      <a
-        class="btn-get-started btn-get-startedT scrollto"
-        href="https://www.tiktok.com/@tecnojackyt"
-        ><i class="bi bi-tiktok"></i>Tiktok</a
-      >
+<ng-container *ngIf="servicesVM$ | async as services; else loading">
+  <div class="tm-gallery galeryContainer">
+    <div
+      class="container-fluid tm-container-content tm-mt-60"
+      *ngFor="let svc of services"
+    >
+      <div class="card col-12">
+        <img
+          [src]="svc.imageUrl | safe : 'resourceUrl'"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ svc.title }}</h5>
+          <p class="card-text">
+            {{ svc.description }}
+          </p>
+        </div>
+
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let benefit of svc.benefits">
+            {{ benefit }}
+          </li>
+        </ul>
+        <div class="card-body">
+          <p>
+            Estos son nuestrso planes básicos. Si deseas servicios adicionales
+            puedes solicitarlos mediante los siguientes medios
+          </p>
+          <hr />
+          <div class="iconsBox">
+            <a
+            class="btn-get-started btn-get-startedC scrollto"
+            href="https://www.facebook.com/tecnojack/"
+            ><i class="bi bi-facebook"></i
+          ></a>
+          <a
+            class="btn-get-started btn-get-startedC scrollto"
+            href="https://wa.me/+573145406467"
+            ><i class="bi bi-whatsapp"></i
+          ></a>
+          <a
+            class="btn-get-started btn-get-startedC scrollto"
+            href="https://www.tiktok.com/tecnojack/"
+            ><i class="bi bi-tiktok"></i
+          ></a>
+          <a
+            class="btn-get-started btn-get-startedC scrollto"
+            href="https://www.youtube.com/@tecnojackyt"
+            ><i class="bi bi-youtube"></i
+          ></a>
+          <a
+          class="btn-get-started btn-get-startedC scrollto"
+          href="https://www.instagram.com/tecnojack/"
+          ><i class="bi bi-instagram"></i
+        ></a>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
-</section>
-<div class="tm-gallery galeryContainer">
-  <div
-  class=" container-fluid tm-container-content tm-mt-60"
-  *ngFor="let svc of service"
->
-  <div class="card col-12">
-    <img
-      [src]="svc.url | safe : 'resourceUrl'"
-      class="card-img-top"
-      alt="..."
-    />
-    <div class="card-body">
-      <h5 class="card-title">{{ svc.title }}</h5>
-      <p class="card-text">
-        {{ svc.desc }}
-      </p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">{{ svc.svc1 }}</li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
-</div>
-</div>
-
-
+</ng-container>
+<ng-template #loading> loading... </ng-template>
